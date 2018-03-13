@@ -4,19 +4,19 @@
       <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo" />
       <span translate>Hello world !</span>
     </h1>
-    <form>
+    <form [formGroup]="mp3Form">
       <div class="form-group">
         <label for="mp3">MP3 file</label>
         <input type="file" class="form-control-file" id="mp3" (change)="onMp3Change($event.target.files)">
       </div>
       <div class="form-group">
         <label for="tags">Song info</label>
-        <input type="text" class="form-control" id="title" placeholder="Title">
-        <input type="text" class="form-control" id="title" placeholder="Unicode Title">
-        <input type="text" class="form-control" id="title" placeholder="Artist">
-        <input type="text" class="form-control" id="title" placeholder="Unicode Artist">
-        <input type="text" class="form-control" id="title" placeholder="Creator">
-        <input type="text" class="form-control" id="title" placeholder="Source">
+        <input type="text" class="form-control" formControlName="title" id="title" placeholder="Title">
+        <input type="text" class="form-control" formControlName="unicodeTitle" id="title" placeholder="Unicode Title">
+        <input type="text" class="form-control" formControlName="artist" id="title" placeholder="Artist">
+        <input type="text" class="form-control" formControlName="unicodeArtist" id="title" placeholder="Unicode Artist">
+        <input type="text" class="form-control" formControlName="creator" id="title" placeholder="Creator">
+        <input type="text" class="form-control" formControlName="source" id="title" placeholder="Source">
       </div>
     </form>
     <app-loader [isLoading]="isLoading"></app-loader>
