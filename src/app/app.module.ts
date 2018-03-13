@@ -24,8 +24,6 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     SharedModule,
     HomeModule,
-    AboutModule,
-    LoginModule,
     AppRoutingModule
   ],
   declarations: [AppComponent],
