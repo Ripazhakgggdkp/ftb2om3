@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "ng": "ng",
-    "build": "npm run env -s && ng build --prod",
+    "build": "npm run env -s && nearleyc \"grammars/**/*.ne\" && ng build --prod",
     "start": "npm run env -s && ng serve --aot --proxy-config proxy.conf.js",
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
     "lint": "ng lint --type-check && stylelint \"src/**/*.scss\" --syntax scss && htmlhint \"src\" --config .htmlhintrc",
@@ -14,7 +14,8 @@
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean -sort --marker extract",
     "docs": "hads ./docs -o",
     "env": "ngx-scripts env npm_package_version",
-    "generate": "ng generate"
+    "generate": "ng generate",
+    "nearley": "nearleyc src/app/grammars/ftbAir.ne > src/app/grammars/ftbAir.ts"
   },
   "dependencies": {
     "@angular/animations": "^5.2.5",
@@ -30,10 +31,12 @@
     "@fortawesome/fontawesome-free-webfonts": "^1.0.4",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0",
     "@ngx-translate/core": "^9.0.1",
+    "@types/nearley": "^2.11.0",
     "bootstrap": "4.0.0",
     "core-js": "^2.5.2",
     "id3-parser": "^2.0.0",
     "lodash": "^4.17.4",
+    "nearley": "^2.13.0",
     "rxjs": "^5.5.5",
     "zone.js": "^0.8.18"
   },
