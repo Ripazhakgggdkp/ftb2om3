@@ -7,7 +7,7 @@
     <form [formGroup]="mp3Form">
       <div class="form-group">
         <label for="mp3">MP3 file</label>
-        <input type="file" class="form-control-file" id="mp3" (change)="onMp3Change($event.target.files)">
+        <input type="file" class="form-control-file" id="mp3" (change)="onMp3Added($event.target.files)">
       </div>
       <div class="form-group">
         <label for="tags">Song info</label>
@@ -17,6 +17,10 @@
         <input type="text" class="form-control" formControlName="unicodeArtist" id="title" placeholder="Unicode Artist">
         <input type="text" class="form-control" formControlName="creator" id="title" placeholder="Creator">
         <input type="text" class="form-control" formControlName="source" id="title" placeholder="Source">
+      </div>
+      <div class="form-group">
+        <label for="mp3">Difficulty</label>
+        <input type="file" class="form-control-file" id="mp3" (change)="onDifficultyAdded($event.target.files)">
       </div>
     </form>
     <app-loader [isLoading]="isLoading"></app-loader>
