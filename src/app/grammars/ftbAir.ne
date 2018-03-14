@@ -5,7 +5,7 @@
 @builtin "number.ne"   
 @builtin "string.ne"    
 
-map -> difficulty bpms layers effects speeds annotations notes
+map -> difficulty bpms layers effects speeds annotations notes          {% function(d) {return {bpms:d[0], multipliers:d[4], notes:d[6]}} %}
 
 difficulty  -> diffIdentifier __  int _ "\n"                            {% function(d) {return {difficulty:d[2]}} %}
 bpms        -> bpmIdentifier bpm:+ endIdentifier                        {% function(d) {return {bpms:d[1]}} %}
